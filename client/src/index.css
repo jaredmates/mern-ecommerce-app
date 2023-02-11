@@ -1,13 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* ---------------------------- */
+/* Reset                        */
+/* ---------------------------- */
+
+/* Box sizing */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Reset Margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  font-weight: 400;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  padding: 0;
+  font-size: 1rem;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+  font-family: "Urbanist", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ------------------- */
+/* Pages               */
+/* ------------------- */
+
+/* -------Main Content------- */
+
+.site-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* -------Error Page------- */
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  padding-top: 5em;
+}
+
+.error-code {
+  font-weight: bold;
+  margin: 0;
+}
+
+/* -------Home Page------- */
+
+.home-container {
+  height: 93vh;
+  background-image: url("../public/images/backgrounds/b14.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.tagline {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #e8e9eb;
+  text-align: center;
+}
+
+.product-image {
+  width: 100%;
+  height: 25vw;
+  object-fit: cover;
+}
+
+.grow {
+  transition: all 0.2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.1);
+}
+
+.shop-button {
+  color: #e8e9eb;
+}
+
+/* ------------------- */
+/* Compontents         */
+/* ------------------- */
+
+/* -------Newsletter------- */
+
+.newsletter-container {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fdf5f6;
+}
+.newsletter-title {
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 2.5rem;
+}
+.newsletter-tagline {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+.newsletter-form {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.newsletter-input {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: none;
+}
+
+.newsletter-button {
+  background-color: rgb(13 148 136);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: rgb(255 255 255);
+  border: none;
+}
+
+/* -------Product------- */
+
+.root {
+  max-width: 100%;
+  flex-grow: 1;
+}
+
+.cardActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cardContent {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+img {
+  width: 600px;
+  height: 300px;
+}
+
+/* ---------------------------- */
+/* Media Queries                */
+/* ---------------------------- */
+
+/* Mobile */
+@media only screen and (max-width: 400px) {
+  /*  */
+}
+
+/* Tablets */
+@media only screen and (max-width: 768px) {
+  /*  */
+}
+
+/* Laptops */
+@media only screen and (max-width: 1024px) {
+  /*  */
 }
