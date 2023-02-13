@@ -17,6 +17,7 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^7.6.0",
+    "cross-env": "^7.0.3",
     "nodemon": "^2.0.20"
   },
   "dependencies": {
@@ -24,7 +25,6 @@
     "cloudinary": "^1.33.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
-    "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
