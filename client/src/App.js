@@ -30,6 +30,10 @@ import AdminRoute from "./components/AdminRoute";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ScrollToTop from "./components/ScrollToTop";
 
+import Axios from "axios";
+
+Axios.defaults.baseURL = "https://mern-ecommerce-app-tsvg.onrender.com";
+
 const App = () => {
   const { userInfo } = useSelector((state) => state.user);
   const { cart } = useSelector((state) => state.cart);
