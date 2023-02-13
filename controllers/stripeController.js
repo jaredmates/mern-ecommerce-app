@@ -4,7 +4,7 @@ const Order = require("../models/orderModel.js");
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
 // @desc   Handle Stripe Payment [OrderPage.js]
-// @route  GET /stripe/secret/:id
+// @route  GET /api/stripe/secret/:id
 // @access Public
 const handleStripePayment = async (req, res) => {
   const order = await Order.findById(req.params.id).populate(
@@ -23,7 +23,7 @@ const handleStripePayment = async (req, res) => {
 };
 
 // @desc   Get Stripe Key [OrderPage.js]
-// @route  GET /stripe/key
+// @route  GET /api/stripe/key
 // @access Public
 const handleStripeKey = (req, res) => {
   res.json(process.env.STRIPE_PUBLISHABLE_KEY);

@@ -12,7 +12,7 @@ import Button from "react-bootstrap/Button";
 import { useSelector, useDispatch } from "react-redux";
 import { userSignin } from "../state/actions/userActions";
 
-const REGISTER_URL = "/users/signup";
+const REGISTER_URL = "/api/users/signup";
 
 const SignupPage = () => {
   const navigate = useNavigate();

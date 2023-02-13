@@ -45,7 +45,7 @@ const OrderListPage = () => {
     const fetchData = async () => {
       try {
         dispatch(orderListFetchRequest());
-        const { data } = await axios.get(`/orders`, {
+        const { data } = await axios.get(`/api/orders`, {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         });
         dispatch(orderListFetchSuccess(data));
@@ -71,7 +71,7 @@ const OrderListPage = () => {
   const deleteHandler = async (order) => {
     try {
       dispatch(deleteRequest());
-      await axios.delete(`/orders/${order._id}`, {
+      await axios.delete(`/api/orders/${order._id}`, {
         headers: { Authorization: `Bearer ${userInfo.token}` },
       });
       toast.success("order deleted successfully");

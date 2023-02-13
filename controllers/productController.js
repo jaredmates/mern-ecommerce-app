@@ -2,7 +2,7 @@ const Product = require("../models/productModel.js");
 const expressAsyncHandler = require("express-async-handler");
 
 // @desc   Get all products [ShopPage.js]
-// @route  GET /products
+// @route  GET /api/products
 // @access Public
 const getAllProducts = expressAsyncHandler(async (req, res) => {
   const products = await Product.find();
@@ -16,7 +16,7 @@ const getAllProducts = expressAsyncHandler(async (req, res) => {
 });
 
 // @desc   Get all products for admin inventory management [ProductListPage.js]
-// @route  GET /products/admin
+// @route  GET /api/products/admin
 // @access Public
 const getAdminProducts = expressAsyncHandler(async (req, res) => {
   const { query } = req;
@@ -40,7 +40,7 @@ const getAdminProducts = expressAsyncHandler(async (req, res) => {
 const PAGE_SIZE = 3;
 
 // @desc   Get search products [SearchPage.js]
-// @route  GET /products/search
+// @route  GET /api/products/search
 // @access Public
 const searchProducts = expressAsyncHandler(async (req, res) => {
   const { query } = req;
@@ -108,7 +108,7 @@ const searchProducts = expressAsyncHandler(async (req, res) => {
 });
 
 // @desc   Get product by categories [SearchPage.js]
-// @route  GET /products/categories
+// @route  GET /api/products/categories
 // @access Public
 const getProductCategories = expressAsyncHandler(async (req, res) => {
   const categories = await Product.find().distinct("category");
@@ -117,7 +117,7 @@ const getProductCategories = expressAsyncHandler(async (req, res) => {
 });
 
 // @desc   Get a single product [ProductPage.js]
-// @route  GET /products/slug/:slug
+// @route  GET /api/products/slug/:slug
 // @access Public
 const getSingleProduct = expressAsyncHandler(async (req, res) => {
   const product = await Product.findOne({ slug: req.params.slug });
@@ -130,7 +130,7 @@ const getSingleProduct = expressAsyncHandler(async (req, res) => {
 });
 
 // @desc   Get a single product by ID [Product.js, ProductPage.js, CartPage.js, ProductEditPage.js]
-// @route  GET /products/:id
+// @route  GET /api/products/:id
 // @access Public
 const getSingleProductID = expressAsyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
@@ -143,7 +143,7 @@ const getSingleProductID = expressAsyncHandler(async (req, res) => {
 });
 
 // @desc   Create a new product [ProductListPage.js]
-// @route  POST /products
+// @route  POST /api/products
 // @access Public
 const createNewProduct = expressAsyncHandler(async (req, res) => {
   const newProduct = new Product({
@@ -164,7 +164,7 @@ const createNewProduct = expressAsyncHandler(async (req, res) => {
 });
 
 // @desc   Update a product [ProductEditPage.js]
-// @route  PATCH /products/:id
+// @route  PATCH /api/products/:id
 // @access Public
 const updateProduct = expressAsyncHandler(async (req, res) => {
   const { id } = req.params;
@@ -263,7 +263,7 @@ const updateProduct = expressAsyncHandler(async (req, res) => {
 });
 
 // @desc   Delete a product [ProductListPage.js]
-// @route  DELETE /products/:id
+// @route  DELETE /api/products/:id
 // @access Public
 const deleteProduct = expressAsyncHandler(async (req, res) => {
   const { id } = req.params;

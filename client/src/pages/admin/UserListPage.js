@@ -45,7 +45,7 @@ const UserListPage = () => {
     const fetchData = async () => {
       try {
         dispatch(userListFetchRequest());
-        const { data } = await axios.get(`/users`, {
+        const { data } = await axios.get(`/api/users`, {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         });
         dispatch(userListFetchSuccess(data));
@@ -71,7 +71,7 @@ const UserListPage = () => {
   const deleteHandler = async (user) => {
     try {
       dispatch(userListDeleteRequest());
-      await axios.delete(`/users/${user._id}`, {
+      await axios.delete(`/api/users/${user._id}`, {
         headers: { Authorization: `Bearer ${userInfo.token}` },
       });
       toast.success("user deleted successfully");

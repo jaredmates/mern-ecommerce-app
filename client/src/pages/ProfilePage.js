@@ -37,7 +37,7 @@ const ProfilePage = () => {
     try {
       dispatch(profileUpdateRequest());
       const { data } = await axios.put(
-        "/users/profile",
+        "/api/users/profile",
         {
           name,
           email,

@@ -31,7 +31,7 @@ const OrderHistoryPage = () => {
     const fetchData = async () => {
       dispatch(orderHistoryFetchRequest());
       try {
-        const { data } = await axios.get("/orders/mine", {
+        const { data } = await axios.get("/api/orders/mine", {
           headers: { authorization: `Bearer ${userInfo.token}` },
         });
         dispatch(orderHistoryFetchSuccess(data));

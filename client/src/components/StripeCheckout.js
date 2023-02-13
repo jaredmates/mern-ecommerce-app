@@ -23,7 +23,7 @@ function CheckoutForm(props) {
     }
 
     setProcessing(true);
-    const { data } = await Axios(`/stripe/secret/${props.orderId}`);
+    const { data } = await Axios(`/api/stripe/secret/${props.orderId}`);
     const clientSecret = data.client_secret;
 
     const result = await stripe.confirmCardPayment(clientSecret, {

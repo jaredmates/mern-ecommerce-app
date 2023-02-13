@@ -51,7 +51,7 @@ const ProductEditPage = () => {
     const fetchData = async () => {
       try {
         dispatch(productEditFetchRequest());
-        const { data } = await axios.get(`/products/${productId}`);
+        const { data } = await axios.get(`/api/products/${productId}`);
         setName(data.name);
         setSlug(data.slug);
         setPrice(data.price);
@@ -73,7 +73,7 @@ const ProductEditPage = () => {
     try {
       dispatch(updateRequest());
       await axios.put(
-        `/products/${productId}`,
+        `/api/products/${productId}`,
         {
           _id: productId,
           name,
@@ -104,7 +104,7 @@ const ProductEditPage = () => {
     bodyFormData.append("file", file);
     try {
       dispatch(uploadRequest());
-      const { data } = await axios.post("/upload", bodyFormData, {
+      const { data } = await axios.post("/api/upload", bodyFormData, {
         headers: {
           "Content-Type": "multipart/form-data",
           authorization: `Bearer ${userInfo.token}`,

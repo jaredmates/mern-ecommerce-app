@@ -31,7 +31,7 @@ const DashboardPage = () => {
     const fetchData = async () => {
       try {
         dispatch(dashboardFetchRequest());
-        const { data } = await axios.get("/orders/summary", {
+        const { data } = await axios.get("/api/orders/summary", {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         });
         dispatch(dashboardFetchSuccess(data));

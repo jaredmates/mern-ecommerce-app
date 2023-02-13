@@ -6,7 +6,7 @@ const payOrderEmailTemplate = require("../utils/payOrderEmailTemplate.js");
 const nodemailer = require("nodemailer");
 
 // @desc   Get all orders [OrderListPage.js]
-// @route  GET /orders
+// @route  GET /api/orders
 // @access Public
 const getAllOrders = expressAsyncHandler(async (req, res) => {
   const orders = await Order.find().populate("user", "name");
@@ -19,7 +19,7 @@ const getAllOrders = expressAsyncHandler(async (req, res) => {
 });
 
 // @desc   Get my orders [OrderHistoryPage.js]
-// @route  GET /orders/mine
+// @route  GET /api/orders/mine
 // @access Public
 const getMyOrder = expressAsyncHandler(async (req, res) => {
   const orders = await Order.find({ user: req.user._id });
@@ -28,7 +28,7 @@ const getMyOrder = expressAsyncHandler(async (req, res) => {
 });
 
 // @desc   Get order summary [DashboardPage.js]
-// @route  GET /orders/summary
+// @route  GET /api/orders/summary
 // @access Public
 const getOrderSummary = expressAsyncHandler(async (req, res) => {
   const orders = await Order.aggregate([
@@ -74,7 +74,7 @@ const getOrderSummary = expressAsyncHandler(async (req, res) => {
 });
 
 // @desc   Get a single order [OrderListPage.js, OrderPage.js]
-// @route  GET /orders/:id
+// @route  GET /api/orders/:id
 // @access Public
 const getOrder = expressAsyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id);
@@ -87,7 +87,7 @@ const getOrder = expressAsyncHandler(async (req, res) => {
 });
 
 // @desc   Create new order [PlaceOrderPage.js]
-// @route  POST /orders
+// @route  POST /api/orders
 // @access Public
 const createNewOrder = expressAsyncHandler(async (req, res) => {
   const newOrder = new Order({
@@ -106,7 +106,7 @@ const createNewOrder = expressAsyncHandler(async (req, res) => {
 });
 
 // @desc   Update order [OrderPage.js]
-// @route  PATCH /orders/:id/pay
+// @route  PATCH /api/orders/:id/pay
 // @access Public
 const updateOrder = expressAsyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id).populate(
@@ -157,7 +157,7 @@ const updateOrder = expressAsyncHandler(async (req, res) => {
 });
 
 // @desc   Update delivery order [OrderPage.js]
-// @route  PATCH /orders/:id/deliver
+// @route  PATCH /api/orders/:id/deliver
 // @access Public
 const deliverOrder = expressAsyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id);
@@ -173,7 +173,7 @@ const deliverOrder = expressAsyncHandler(async (req, res) => {
 });
 
 // @desc   Delete an order [OrderListPage.js]
-// @route  DELETE /orders/:id
+// @route  DELETE /api/orders/:id
 // @access Public
 const deleteOrder = expressAsyncHandler(async (req, res) => {
   const { id } = req.params;

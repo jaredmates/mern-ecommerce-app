@@ -57,7 +57,7 @@ const ProductListPage = () => {
     const fetchData = async () => {
       try {
         dispatch(productListFetchRequest());
-        const { data } = await axios.get(`/products/admin?page=${page} `, {
+        const { data } = await axios.get(`/api/products/admin?page=${page} `, {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         });
 
@@ -85,7 +85,7 @@ const ProductListPage = () => {
     try {
       dispatch(productListCreateRequest());
       const { data } = await axios.post(
-        "/products",
+        "/api/products",
         {},
         {
           headers: { Authorization: `Bearer ${userInfo.token}` },
@@ -103,7 +103,7 @@ const ProductListPage = () => {
   const deleteHandler = async (product) => {
     try {
       dispatch(productListDeleteRequest());
-      await axios.delete(`/products/${product._id}`, {
+      await axios.delete(`/api/products/${product._id}`, {
         headers: { Authorization: `Bearer ${userInfo.token}` },
       });
       toast.success("product deleted successfully");

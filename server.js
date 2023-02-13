@@ -41,13 +41,13 @@ app.get("/api/keys/paypal", (req, res) => {
 });
 
 // Stripe
-app.use("/stripe", stripeRouter);
+app.use("/api/stripe", stripeRouter);
 
 // Routes
-app.use("/upload", uploadRouter);
-app.use("/products", productRouter);
-app.use("/users", userRouter);
-app.use("/orders", orderRouter);
+app.use("/api/upload", uploadRouter);
+app.use("/api/products", productRouter);
+app.use("/api/users", userRouter);
+app.use("/api/orders", orderRouter);
 
 // Error Handler
 app.use("*", (req, res) => res.status(404).json({ error: "not found" }));

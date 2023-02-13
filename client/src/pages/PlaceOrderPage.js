@@ -48,7 +48,7 @@ const PlaceOrderPage = () => {
       dispatch(createRequest());
 
       const { data } = await Axios.post(
-        "/orders",
+        "/api/orders",
         {
           orderItems: cart.cartItems,
           shippingAddress: cart.shippingAddress,

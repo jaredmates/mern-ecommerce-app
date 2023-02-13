@@ -2,7 +2,7 @@ const streamifier = require("streamifier");
 const { cloudinary } = require("../config/cloudinary");
 
 // @desc   Upload Image [ProductEditPage.js]
-// @route  POST /upload
+// @route  POST /api/upload
 // @access Public
 const handleUpload = async (req, res) => {
   const streamUpload = (req) => {

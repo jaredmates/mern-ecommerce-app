@@ -71,7 +71,7 @@ const SearchPage = () => {
       try {
         dispatch(searchFetchRequest());
         const { data } = await axios.get(
-          `/products/search?page=${page}&query=${query}&category=${category}&price=${price}&order=${order}`
+          `/api/products/search?page=${page}&query=${query}&category=${category}&price=${price}&order=${order}`
         );
 
         dispatch(searchFetchSuccess(data));
@@ -85,7 +85,7 @@ const SearchPage = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const { data } = await axios.get(`/products/categories`);
+        const { data } = await axios.get(`/api/products/categories`);
         setCategories(data);
       } catch (err) {
         toast.error(getError(err));

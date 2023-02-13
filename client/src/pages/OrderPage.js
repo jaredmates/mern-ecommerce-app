@@ -73,9 +73,13 @@ const OrderPage = () => {
     return actions.order.capture().then(async function (details) {
       try {
         dispatch(payRequest());
-        const { data } = await axios.put(`/orders/${order._id}/pay`, details, {
-          headers: { authorization: `Bearer ${userInfo.token}` },
-        });
+        const { data } = await axios.put(
+          `/api/orders/${order._id}/pay`,
+          details,
+          {
+            headers: { authorization: `Bearer ${userInfo.token}` },
+          }
+        );
         dispatch(paySuccess(data));
         toast.success("Order is paid");
       } catch (err) {
@@ -88,7 +92,7 @@ const OrderPage = () => {
   async function handleSuccessPayment(result, actions) {
     try {
       dispatch(payRequest());
-      const { data } = await axios.put(`/orders/${order._id}/pay`, result, {
+      const { data } = await axios.put(`/api/orders/${order._id}/pay`, result, {
         headers: { authorization: `Bearer ${userInfo.token}` },
       });
       dispatch(paySuccess(data));
@@ -107,7 +111,7 @@ const OrderPage = () => {
     const fetchOrder = async () => {
       try {
         dispatch(orderFetchRequest());
-        const { data } = await axios.get(`/orders/${orderId}`, {
+        const { data } = await axios.get(`/api/orders/${orderId}`, {
           headers: { authorization: `Bearer ${userInfo.token}` },
         });
         dispatch(orderFetchSuccess(data));
@@ -150,7 +154,7 @@ const OrderPage = () => {
       };
 
       const addStripeScript = async () => {
-        const { data: clientId } = await axios.get("/stripe/key");
+        const { data: clientId } = await axios.get("/api/stripe/key");
         const stripeObj = await loadStripe(clientId);
         setStripe(stripeObj);
       };
@@ -181,7 +185,7 @@ const OrderPage = () => {
     try {
       dispatch(deliverRequest());
       const { data } = await axios.put(
-        `/orders/${order._id}/deliver`,
+        `/api/orders/${order._id}/deliver`,
         {},
         {
           headers: { authorization: `Bearer ${userInfo.token}` },

@@ -40,7 +40,7 @@ const CartScreen = () => {
   };
 
   const updateCartHandler = async (item, quantity) => {
-    const { data } = await axios.get(`/products/${item._id}`);
+    const { data } = await axios.get(`/api/products/${item._id}`);
     if (data.countInStock < quantity) {
       handleClickOpen();
       return;

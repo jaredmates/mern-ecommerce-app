@@ -42,7 +42,7 @@ const UserEditPage = () => {
     const fetchData = async () => {
       try {
         dispatch(userEditFetchRequest());
-        const { data } = await axios.get(`/users/${userId}`, {
+        const { data } = await axios.get(`/api/users/${userId}`, {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         });
         setName(data.name);
@@ -61,7 +61,7 @@ const UserEditPage = () => {
     try {
       dispatch(userEditUpdateRequest());
       await axios.put(
-        `/users/${userId}`,
+        `/api/users/${userId}`,
         { _id: userId, name, email, isAdmin },
         {
           headers: { Authorization: `Bearer ${userInfo.token}` },

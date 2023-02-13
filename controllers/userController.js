@@ -4,7 +4,7 @@ const expressAsyncHandler = require("express-async-handler");
 const generateToken = require("../utils/generateToken");
 
 // @desc   Get all users [UserListPage.js]
-// @route  GET /users
+// @route  GET /api/users
 // @access Public
 const getAllUsers = expressAsyncHandler(async (req, res) => {
   const users = await User.find({});
@@ -18,7 +18,7 @@ const getAllUsers = expressAsyncHandler(async (req, res) => {
 });
 
 // @desc   Get single user [UserEditPage.js]
-// @route  GET /users/:id
+// @route  GET /api/users/:id
 // @access Public
 const getUser = expressAsyncHandler(async (req, res) => {
   if (!req?.params?.id) {
@@ -37,7 +37,7 @@ const getUser = expressAsyncHandler(async (req, res) => {
 });
 
 // @desc    Authenticate a user [SigninPage.js]
-// @route   POST /users/signin
+// @route   POST /api/users/signin
 // @access  Public
 const handleLogin = expressAsyncHandler(async (req, res) => {
   const { email, password } = req.body;
@@ -69,7 +69,7 @@ const handleLogin = expressAsyncHandler(async (req, res) => {
 });
 
 // @desc   Create new user [SignupPage.js]
-// @route  POST /users/signup
+// @route  POST /api/users/signup
 // @access Public
 const handleNewUser = expressAsyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
@@ -120,7 +120,7 @@ const handleNewUser = expressAsyncHandler(async (req, res) => {
 });
 
 // @desc   Update a users profile [ProfilePage.js]
-// @route  PATCH /users/profile
+// @route  PATCH /api/users/profile
 // @access Public
 const updateUserProfile = expressAsyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
@@ -176,7 +176,7 @@ const updateUserProfile = expressAsyncHandler(async (req, res) => {
 });
 
 // @desc   Update a user [UserEditPage.js]
-// @route  PATCH /users/:id
+// @route  PATCH /api/users/:id
 // @access Public
 const updateUser = expressAsyncHandler(async (req, res) => {
   const { id } = req.params;
@@ -224,7 +224,7 @@ const updateUser = expressAsyncHandler(async (req, res) => {
 });
 
 // @desc   Delete a user [UserListPage.js]
-// @route  DELETE /users/:id
+// @route  DELETE /api/users/:id
 // @access Public
 const deleteUser = expressAsyncHandler(async (req, res) => {
   const { id } = req.params;
