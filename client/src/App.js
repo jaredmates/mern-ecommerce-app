@@ -36,7 +36,7 @@ const development = process.env.NODE_ENV !== "production";
 
 Axios.defaults.baseURL = development
   ? "http://localhost:5000"
-  : process.env.API_URL;
+  : "https://mern-ecommerce-app-tsvg.onrender.com";
 
 const App = () => {
   const { userInfo } = useSelector((state) => state.user);
