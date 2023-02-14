@@ -32,7 +32,11 @@ import ScrollToTop from "./components/ScrollToTop";
 
 import Axios from "axios";
 
-Axios.defaults.baseURL = "https://mern-ecommerce-app-tsvg.onrender.com";
+const development = process.env.NODE_ENV !== "production";
+
+Axios.defaults.baseURL = development
+  ? "http://localhost:5000"
+  : "https://mern-ecommerce-app-tsvg.onrender.com";
 
 const App = () => {
   const { userInfo } = useSelector((state) => state.user);
