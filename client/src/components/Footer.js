@@ -37,7 +37,7 @@ const Footer = () => {
 
               <p>
                 <Link to="/search?category=Shirts" className="text-reset">
-                  Shop
+                  Shirts
                 </Link>
               </p>
 
