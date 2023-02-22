@@ -5,6 +5,7 @@
 ## Table of Contents:
 
 - [About The App](#about-the-app)
+- [Features](#features)
 - [Admin Permissions](#admin-permissions)
 - [Technologies](#technologies)
 - [Environment Variables](#environment-variables)
@@ -14,6 +15,50 @@
 ## About The App:
 
 Fear of Monkey is an ecommerce store for a fake clothing brand. I built this app using the MERN stack.
+
+## Features
+
+- Responsive Design
+
+- React for displaying UI components
+
+- Redux to manage application's state
+
+- Express middleware to handle requests and routes
+
+- Mongoose schemas to model the application data
+
+- Authentication using Json Web Tokens
+
+- Password encryption using Bcrypt library
+
+- Protected Admin/User routes in both front-end and back-end
+
+- Remain logged-in while page refreshed with Json Web Tokens and Local Storage
+
+- Inventory Management System
+
+- Admin CRUD operations for products, users, and orders
+
+- Admin dashboard utilizing Google Charts
+
+- Email order confirmation after transaction processed
+
+- Media storage using Multer library and Cloudinary service
+
+- Users can sign up for an account and sign into already existing accounts
+
+- Users can add items to the shopping Cart
+
+- Users can increase/decrease the quantity of an item in the shopping Cart
+
+- Users can remove items from the shopping Cart
+
+- Users can pay for their items using Stripe or Paypal, two secure and widely-used payment processing platforms
+
+- Users can update their profile information
+
+- App deployed using Render service
 
 ## Admin Permissions:
 
