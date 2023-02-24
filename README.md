@@ -4,17 +4,17 @@
 
 ## Table of Contents:
 
-- [About The App](#about-the-app)
+- [Description](#description)
 - [Features](#features)
-- [Admin Permissions](#admin-permissions)
+- [Admin Log In](#admin-log-in)
 - [Technologies](#technologies)
 - [Environment Variables](#environment-variables)
 - [Run Locally](#run-locally)
 - [Possible Future Additions](#possible-future-additions)
 
-## About The App:
+## Description
 
-Fear of Monkey is an ecommerce store for a fake clothing brand. I built this app using the MERN stack.
+Fear of Monkey is a fully functional online store that allows users to browse and purchase clothing products. I built this full-stack E-commerce application using the MERN stack (MongoDB, Express.js, React, Node.js).
 
 ## Features
 
@@ -60,7 +60,7 @@ Fear of Monkey is an ecommerce store for a fake clothing brand. I built this app
 
 - App deployed using Render service
 
-## Admin Permissions:
+## Admin Log In:
 
 To perform all CRUD operations on products, users, and orders, sign in with:
 
